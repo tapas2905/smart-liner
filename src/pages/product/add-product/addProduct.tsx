@@ -210,11 +210,11 @@ const AddProduct: React.FC = () => {
     } catch (error: any) {
       alert(error?.response?.data?.detail || error?.message, "error");
     }
-  };
+  };*/
 
   const uploadFileClick = () => {
     fileInputRef.current?.click();
-  };*/
+  };
 
  const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
   const file = event.target.files?.[0];
