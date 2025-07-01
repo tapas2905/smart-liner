@@ -283,7 +283,7 @@ const AddProduct: React.FC = () => {
               style={{ display: "none" }}
             />
 
-            <button type="button" onClick={uploadFileClick} disabled={isUploadFile}>
+            <button type="button" onClick={uploadFileClick} disabled={true}>
               {!isUploadFile ? 'Browse' : (<span className={styles.uploadBtnLoader}><CircularProgress size="22px"/> Please wait...</span>)}
             </button>
 
