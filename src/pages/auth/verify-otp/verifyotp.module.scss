@@ -1,0 +1,96 @@
+@import "../../../assets/styles/shared.scss";
+
+.verifyOtpBodyPrt{
+    position: relative;
+    background-color: $loginBodyBg;
+    padding: 120px 0;
+    @media only screen and (max-width:991px){
+        padding: 40px 0;
+    }
+    .verifyOtpFormBox{
+        position: relative;
+        width: 100%;
+        max-width: 515px;
+        margin: 0 auto;
+        padding: 40px 30px;
+        background-color: $whiteColor;
+        border-radius: 10px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+        @media only screen and (max-width:991px){
+            padding: 20px 15px;
+        }
+        .verifyOtpBoxHdn{
+            text-align: center;
+            margin-bottom: 30px;
+            h2{
+                font-size: 40px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                @media only screen and (max-width:991px){
+                    font-size: 30px;
+                }
+            }
+            p{
+                font-size: 17px;
+                margin-bottom: 0;
+            }
+        }
+        .verifyOtpFormField{
+            margin-top: 30px;
+            label{
+                font-size: 16px;
+                margin-bottom: 12px;
+                display: inline-block;
+                width: 100%;
+            }
+            input{
+                width: 100%;
+                height: 60px;
+                background-color: $headerBg;
+                border: none;
+                border-radius: 10px;
+                font-size: 16px;
+                padding: 10px 20px;
+                margin-bottom: 7px;
+            }
+            .verifyOtpError{
+                position: relative;
+                margin: 0;
+                font-size: 14px;
+                color: $errorColor;
+            }
+            .submitBtn{
+                width: 100%;
+                margin-top: 30px;
+                border: none;
+                background-color: $copyrightBgColor;
+                font-size: 18px;
+                color: $whiteColor;
+                font-weight: 600;
+                padding: 18px 15px;
+                border-radius: 10px;
+                cursor: pointer;
+                @include transition;
+                &:hover{
+                    background-color: $secondaryColor;
+                }
+            }
+        }
+        .verifyOtpTermsService{
+            margin: 30px 0 0 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            span{
+                margin: 0 15px;
+            }
+            a{
+                color: $secondaryColor;
+                text-decoration: underline;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

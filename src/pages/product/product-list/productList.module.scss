@@ -1,0 +1,381 @@
+@import "../../../assets/styles/shared.scss";
+
+.productListBdyPrt{
+    position: relative;
+    background-color: $loginBodyBg;
+    padding: 50px 0;
+    @media only screen and (max-width:991px){
+        padding: 40px 0;
+    }
+    .productListHdrPrt{
+        margin-bottom: 50px;
+        .productListHdrRow{
+            @include justify-space-between;
+            align-items: center;
+            .productListTitle{
+                h1{
+                    font-size: 40px;
+                    font-weight: 600;
+                    @media only screen and (max-width:991px){
+                        font-size: 30px;
+                    }
+                    @media (max-width: 576px){
+                        font-size: 27px;
+                    }
+                }
+            }
+            .productListRightPrt{
+                @media only screen and (max-width:991px){
+                    width: 100%;
+                    margin-top: 15px;
+                }
+                ul{
+                    @include flex;
+                    align-items: center;
+                    li{
+                        margin-left: 15px;
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                    }
+                    .productSearchField{
+                        @media only screen and (max-width:991px){
+                            width: 100%;
+                            margin-bottom: 15px;
+                        }
+                        form{
+                            position: relative;
+                            input{
+                                width: 300px;
+                                height: 42px;
+                                background-color: $whiteColor;
+                                border: 1px solid $borderColor;
+                                border-radius: 8px;
+                                padding: 10px 40px 10px 15px;
+                                font-size: 15px;
+                                color: #161E2D;
+                                @media only screen and (max-width:991px){
+                                    width: 100%;
+                                }
+                                &::-webkit-input-placeholder {
+                                    color:#161E2D;
+                                }
+                                &::-moz-placeholder {
+                                    color:#161E2D;
+                                }
+                                &::-ms-placeholder {
+                                    color:#161E2D;
+                                }
+                                &::placeholder {
+                                    color:#161E2D;
+                                }
+                            }
+                            .productSrchIcon{
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                    .productSort{
+                        select{
+                            width: 180px;
+                            height: 42px;
+                            background-color: $whiteColor;
+                            border: 1px solid $borderColor;
+                            border-radius: 8px;
+                            padding: 10px 10px;
+                            font-size: 15px;
+                            color: #161E2D;
+                            background-image: url(../../../assets/images/down-arrow-icon.svg);
+                            background-repeat: no-repeat;
+                            background-position: 94% 16px;
+                            cursor: pointer;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                        }
+                    }
+                    .productGridListView{
+                        display: inline-block;
+                        background-color: $whiteColor;
+                        padding: 8px;
+                        border: 1px solid $borderColor;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        @media only screen and (max-width:576px){
+                            order: 2;
+                            margin-left: 0;
+                            margin-right: 15px;
+                        }
+                        &:hover{
+                            background-color: $headerBg;
+                        }
+                    }
+                    .productDownloadCsv{
+                        font-size: 15px;
+                        font-weight: 600;
+                        @media only screen and (max-width:576px){
+                            order: 1;
+                            margin-left: 0;
+                            width: 100%;
+                            margin-bottom: 15px;
+                            text-align: center;
+                        }
+                        button{
+                            display: inline-block;
+                            background-color: $copyrightBgColor;
+                            text-decoration: none;
+                            padding: 13px 30px;
+                            color: $whiteColor;
+                            border-radius: 10px;
+                            @media only screen and (max-width:576px){
+                                width: 100%;
+                            }
+                            &:hover{
+                                background-color: $secondaryColor;
+                            }
+                        }
+                        button:disabled,
+                        button[disabled] {
+                            border: 1px solid #999999;
+                            background-color: #cccccc;
+                            color: #666666;
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Product List Grid View Area
+
+    .productGridViewPrt{
+        ul{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            @media only screen and (max-width:991px){
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media only screen and (max-width:767px){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media only screen and (max-width:576px){
+                display: block;
+            }
+            li{
+                position: relative;
+                background-color: $whiteColor;
+                border: 1px solid #efefef;
+                min-height: 200px;
+                border-radius: 10px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                @media only screen and (max-width:576px){
+                    max-width: 350px;
+                    margin: 25px auto;
+                }
+                img{
+                    width: 100%;
+                    height: 225px;
+                    object-fit: cover;
+                    @media only screen and (max-width:576px){
+                        height: auto;
+                    }
+                }
+                .productGridTextArea{
+                    padding: 20px 15px;
+                    h3{
+                        font-size: 18px;
+                        color: #161E2D;
+                        font-weight: 600;
+                    }
+                    .productGridPriceRow{
+                        border-top: 1px solid $borderColor;
+                        margin-top: 12px;
+                        padding-top: 12px;
+                        @include justify-space-between;
+                        align-items: center;
+                        h4{
+                            font-size: 16px;
+                            color: $textColor;
+                            font-weight: 500;
+                        }
+                        p{
+                            margin: 0;
+                            .productGridOldPrice{
+                                font-size: 14px;
+                                color: $textColor;
+                                font-weight: 500;
+                                text-decoration: line-through;
+                                margin-right: 6px;
+                            }
+                            .productGridCurrentPrice{
+                                font-size: 16px;
+                                color: $secondaryColor;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .productGridStockBtn{
+                    position: absolute;
+                    top: 18px;
+                    left: 18px;
+                    z-index: 1;
+                    p{
+                        display: inline-block;
+                        margin: 0;
+                        font-size: 12px;
+                        color: $whiteColor;
+                        line-height: 20px;
+                        background-color: $secondaryColor;
+                        padding: 3px 8px;
+                        border-radius: 30px;
+                        span{
+                            display: inline-block;
+                            margin-right: 2px;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-align: center;
+                            line-height: 16px;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+                .productGridSoldBtn{
+                    position: absolute;
+                    top: 18px;
+                    left: 18px;
+                    z-index: 1;
+                    p{
+                        display: inline-block;
+                        margin: 0;
+                        font-size: 14px;
+                        color: $whiteColor;
+                        line-height: 20px;
+                        background-color: $errorColor;
+                        padding: 3px 8px;
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // Product List List View Area
+    .productListViewPrt{
+        ul{
+            background-color: $whiteColor;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 12px;
+            @include justify-space-between;
+            align-items: center;
+            li{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                &:first-child{
+                    width: 16%;
+                    padding-left: 20px !important;
+                }
+                &:nth-child(2){
+                    width: 20%;
+                }
+                &:nth-child(3){
+                    width: 23%;
+                }
+                &:nth-child(4){
+                    width: 20%;
+                }
+                &:nth-child(5){
+                    width: 10%;
+                }
+                &:last-child{
+                    width: 10%;
+                    padding-right: 20px !important;
+                }
+            }
+        }
+        .tableHead{
+            @media (max-width: 991px){
+                display: none;
+            }
+            ul{
+                li{
+                    font-size: 18px;
+                    font-weight: 600;
+                    padding: 17px 10px;
+                }
+            }
+        }
+        .tableRow{
+            ul{
+                @media (max-width: 991px){
+                    display: block;
+                    padding: 15px 0;
+                }
+                li{
+                    padding: 10px 10px;
+                    @media (max-width: 991px){
+                        width: 100%;
+                        @include justify-space-between;
+                        align-items: center;
+                    }
+                    &::before{
+                        @media (max-width: 991px){
+                            content: attr(data-label);
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                        color: $textColor;
+                        font-weight: 500;
+                        margin-bottom: 0;
+                        @media (max-width: 991px){
+                            width: calc(100% - 120px);
+                            text-align: right;
+                        }
+                        strong{
+                            color: $blackColor;
+                            margin-right: 3px;
+                        }
+                    }
+                    &:first-child{
+                        padding-left: 10px !important;
+                        img{
+                            max-width: 100px;
+                            max-height: 65px;
+                            border-radius: 10px;
+                        }
+                    }
+                    &:nth-child(5){
+                        p{
+                            text-decoration: line-through;
+                        }
+                    }
+                    &:last-child{
+                        p{
+                            font-size: 18px;
+                            color: $secondaryColor;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .loader{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+}

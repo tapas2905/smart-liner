@@ -1,0 +1,132 @@
+@import "../../assets/styles/shared.scss";
+
+.header{
+    position: relative;
+    background-color: $headerBg;
+    padding: 15px 0;
+    .headerRow{
+        @include justify-space-between;
+        align-items: center;
+    }
+    .headerLogoPrt{
+        img{
+            width: 100%;
+            max-width: 300px;
+            @media only screen and (max-width:991px){
+                max-width: 180px;
+            }
+        }
+    }
+    .headerMenuPrt{
+        position: relative;
+        margin-left: auto;
+        @media only screen and (max-width:991px){
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .hdrSignInPrt{
+        position: relative;
+        margin-left: 40px;
+        @media only screen and (max-width:991px){
+            margin-left: auto;
+        }
+        .hdrSignBtn{
+            a{
+                display: flex;
+                align-items: center;
+                background-color: $secondaryColor;
+                font-size: 18px;
+                color: $whiteColor;
+                font-weight: 600;
+                padding: 9px 18px;
+                border-radius: 35px;
+                text-decoration: none;
+                vertical-align: middle;
+                @media only screen and (max-width:576px){
+                    font-size: 14px;
+                    padding: 5px 8px;
+                }
+                &:hover{
+                    background-color: $copyrightBgColor;
+                }
+                .hdrProfileName{
+                    display: inline-block;
+                    @media only screen and (max-width:576px){
+                        width: 65px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    @media only screen and (max-width:450px){
+                        width: 45px;
+                        display: none;
+                    }
+                }
+                .hdrProfileImg{
+                    width: 30px;
+                    height: 30px;
+                    border: 2px solid $whiteColor;
+                    border-radius: 100%;
+                    margin-right: 10px;
+                    @media only screen and (max-width:450px){
+                        margin-right: 0;
+                    }
+                }
+                i{
+                    margin-right: 8px;
+                }
+            }
+        }
+        .hdrProfileDropdown{
+            position: absolute;
+            width: 150px;
+            top: 55px;
+            right: 0;
+            background-color: $whiteColor;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: 1;
+            &::before{
+                position: absolute;
+                font-family: Fontawesome;
+                font-size: 28px;
+                color: $whiteColor;
+                content: '\f0de';
+                width: 17px;
+                height: 10px;
+                top: -11px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+            ul{
+                li{
+                    margin: 10px 0;
+                    font-size: 18px;
+                    font-weight: 500;
+                    border-bottom: 1px solid $borderColor;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                    a{
+                        padding: 10px 15px;
+                        display: inline-block;
+                        text-decoration: none;
+                        color: $blackColor;
+                        width: 100%;
+                        &:hover{
+                            color: $secondaryColor;
+                        }
+                        i{
+                            margin-right: 12px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

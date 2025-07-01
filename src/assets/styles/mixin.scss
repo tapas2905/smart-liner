@@ -1,0 +1,81 @@
+@mixin transition{
+  -webkit-transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -o-transition: all 0.3s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+@mixin translateY{
+  transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+@mixin ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@mixin anker{
+  cursor: pointer;
+  text-decoration: none;
+}
+@mixin flex{
+  display:flex;
+  flex-wrap: wrap;
+}
+@mixin justify-space-between{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@mixin justify-center{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@mixin justify-end{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+@mixin justify-start{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+@mixin align-center{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@mixin flex-all-center{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@mixin text-center{
+  text-align: center;
+}
+@mixin position-absolute{
+  position: absolute;
+}
+@mixin position-fixed{
+  position: fixed;
+}
+@mixin full-width{
+  width:100%!important;
+}
+@mixin img{
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+@mixin content{
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 23px;
+}

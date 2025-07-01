@@ -1,0 +1,1 @@
+export type AlertType = "warning" | "success" | "error" | "info" | "question";

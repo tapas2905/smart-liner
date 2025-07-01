@@ -1,0 +1,374 @@
+@import "../../../assets/styles/shared.scss";
+
+.addProductBdyPrt{
+	position: relative;
+	background-color: $loginBodyBg;
+    padding: 50px 0;
+    @media (max-width: 991px){
+      padding: 40px 0;
+    }
+	.pageTitle{
+		h1{
+			font-size: 40px;
+      font-weight: 600;
+      @media (max-width: 991px){
+        font-size: 30px;
+      }
+      @media (max-width: 576px){
+        font-size: 27px;
+      }
+		}
+	}
+	.addProductFormBox{
+		position: relative;
+		background-color: $whiteColor;
+		padding: 30px 25px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+		border-radius: 10px;
+		margin-top: 30px;
+    @media (max-width: 991px){
+      padding: 20px 15px;
+    }
+    .purchaseOrderTitleRow{
+      @include justify-space-between;
+      align-items: center;
+      margin-bottom: 35px;
+      .purchaseOrderTitle{
+        position: relative;
+        font-size: 30px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        &::after{
+          position: absolute;
+          content: '';
+          width: 150px;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $copyrightBgColor;
+        }
+        @media (max-width: 991px){
+          font-size: 22px;
+        }
+      }
+      .removePoButton{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        i{
+          width: 35px;
+          height: 35px;
+          border: 1px solid $errorColor;
+          border-radius: 100%;
+          font-size: 16px;
+          color: $errorColor;
+          text-align: center;
+          line-height: 35px;
+        }
+      }
+    }
+	}
+  .stateZipRow{
+    @include justify-space-between;
+    .stateField,
+    .zipField{
+      width: 48.5%;
+      @media (max-width: 767px){
+        width: 100%;
+      }
+    }
+    .zipField{
+      @media (max-width: 767px){
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .noCalenderIcon::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  }
+  .noCalenderIcon{
+    background-image: url(../../../assets/images/calender-icon.svg);
+    background-repeat: no-repeat;
+    background-position: 94% 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  // .calenderIcon{
+  //   position: absolute;
+  //   top: 46px;
+  //   right: 16px;
+  // }
+
+	.productItmPrt{
+		margin-top: 60px;
+		.productItmTable{
+			border: 1px solid $borderColor;
+			border-radius: 10px;
+      overflow: hidden;
+			ul{
+				@include justify-space-between;
+				li{
+					width: 33.3%;
+					text-align: center;
+					padding: 15px 15px;
+          border-right: 1px solid $borderColor;
+          border-top: 1px solid $borderColor;
+          &:last-child{
+            border-right: none;
+          }
+				}
+			}
+      .proTableHead{
+        @media (max-width: 991px){
+          display: none;
+        }
+        ul{
+          li{
+            background-color: $headerBg;
+            font-size: 16px;
+            font-weight: 600;
+            border-top: none;
+          }
+        }
+      }
+      .proTableBody{
+        ul{
+          li{
+            @media (max-width: 991px){
+              width: 100%;
+              @include justify-space-between;
+              align-items: center;
+            }
+            &::before{
+              @media (max-width: 991px){
+                content: attr(data-label);
+                font-size: 18px;
+                font-weight: 600;
+                margin-right: 20px;
+              }
+            }
+          }
+          p.errorMessage{
+            font-size: 14px;
+            color: $errorColor;
+            text-align: left;
+            margin: 5px 0 0 0;
+          }
+        }
+        .selectItemDropdown{
+          select{
+            width: 180px;
+            height: 42px;
+            background-color: $whiteColor;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 10px;
+            font-size: 16px;
+            color: $blackColor;
+            font-weight: 500;
+            text-align: center;
+            background-image: url(../../../assets/images/down-arrow-icon2.svg);
+            background-repeat: no-repeat;
+            background-position: 94% 16px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
+        }
+        .quantityField{
+          input{
+            width: 50px;
+            height: 42px;
+            font-size: 16px;
+            color: $blackColor;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            -moz-appearance: textfield;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button{
+              -webkit-appearance: none;
+            }
+          }
+          button{
+            width: 24px;
+            height: 24px;
+            border: none;
+            background-color: #D9D9D9;
+            border-radius: 4px;
+            font-size: 16px;
+            color: $blackColor;
+            font-weight: 500;
+            text-align: center;
+            line-height: 24px;
+            cursor: pointer;
+          }
+        }
+        .itemDeleteBtn{
+          button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &:disabled{
+              opacity: 0.4;
+              cursor: not-allowed;
+            }
+            i{
+              width: 30px;
+              height: 30px;
+              background-color: $deleteColor;
+              border-radius: 100%;
+              font-size: 16px;
+              color: $whiteColor;
+              text-align: center;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+		}
+    .addItem{
+      margin-top: 15px;
+      @include justify-end;
+      button{
+        display: inline-block;
+        background-color: $secondaryColor;
+        border: none;
+        padding: 18px 35px;
+        border-radius: 8px;
+        font-size: 17px;
+        color: $whiteColor;
+        font-weight: 600;
+        cursor: pointer;
+        @media (max-width: 576px){
+          font-size: 14px;
+          padding: 10px 10px;
+        }
+        &:hover{
+          background-color: $copyrightBgColor;
+        }
+        i{
+          font-size: 20px;
+          margin-right: 10px;
+          vertical-align: middle;
+          @media (max-width: 576px){
+            font-size: 15px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+	}
+
+  .addSubmitBtn{
+    ul{
+      margin-top: 40px;
+      @include justify-end;
+      align-items: center;
+      @media (max-width: 576px){
+        @include justify-space-between;
+      }
+      li{
+        margin-left: 15px;
+        @media (max-width: 576px){
+          margin-left: 5px;
+        }
+        &:first-child{
+          margin-left: 0;
+        }
+        .addPoBtn{
+          background-color: $whiteColor;
+          border: 1px solid $borderColor;
+          padding: 18px 30px;
+          border-radius: 8px;
+          font-size: 16px;
+          color: $blackColor;
+          font-weight: 600;
+          cursor: pointer;
+          @media (max-width: 576px){
+            font-size: 13px;
+            padding: 10px 10px;
+          }
+          &:hover{
+            background-color: $copyrightBgColor;
+            color: $whiteColor;
+          }
+        }
+        .submitBtn{
+          background-color: $copyrightBgColor;
+          border: 1px solid transparent;
+          padding: 18px 30px;
+          border-radius: 8px;
+          font-size: 16px;
+          color: $whiteColor;
+          font-weight: 600;
+          cursor: pointer;
+          @media (max-width: 576px){
+            font-size: 13px;
+            padding: 10px 10px;
+          }
+          &:hover{
+            background-color: $whiteColor;
+            color: $blackColor;
+            border: 1px solid $borderColor;
+          }
+        }
+      }
+    }
+  }
+
+
+  .uploadFileBox{
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px dashed $secondaryColor;
+    padding: 40px 25px;
+    text-align: center;
+    i{
+      display: block;
+      font-size: 60px;
+      color: $secondaryColor;
+      margin-bottom: 15px;
+    }
+    h2{
+      font-size: 35px;
+      color: $blackColor;
+      font-weight: 800;
+    }
+    p{
+      font-size: 18px;
+      color: $textColor;
+      font-weight: 600;
+      margin: 10px 0 0 0;
+    }
+    .addProductInputFileField{
+      button{
+        border: 1px solid $secondaryColor;
+        padding: 12px 30px;
+        border-radius: 6px;
+        background-color: transparent;
+        margin: 35px 0 10px 0;
+        font-size: 18px;
+        color: $secondaryColor;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .uploadBtnLoader{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

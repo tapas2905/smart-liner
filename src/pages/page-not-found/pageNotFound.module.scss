@@ -1,0 +1,22 @@
+@import "../../assets/styles/shared.scss";
+
+.pageNotFoundBdyPrt{
+  position: relative;
+  padding: 100px 0;
+  text-align: center;
+  img{
+    max-width: 150px;
+  }
+  h2{
+      font-size: 35px;
+      color: $blackColor;
+      font-weight: 800;
+      margin-top: 50px;
+    }
+    p{
+      font-size: 18px;
+      color: $textColor;
+      font-weight: 600;
+      margin: 10px 0 0 0;
+    }
+}

@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2", sans-serif;
+  color: $blackColor !important;
+}
+h1, h2, h3, h4, h5{
+  font-family: "Exo 2", sans-serif;
+}
+div, p, h1, h2, h3, h4, h5{
+  padding: 0;
+  margin: 0;
+}
+a, button{
+  @include transition;
+}
+img, .img {
+  @include img;
+}
+input,
+textarea,
+select {
+  outline: none;
+}
+ul {
+  @include ul;
+}
+p{
+  font-family: "Exo 2", sans-serif;
+  font-size: 15px;
+  color: $blackColor;
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.container {
+  width: 100%;
+  max-width: 95%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.smartLinerFormClmThree{
+  ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    @media (max-width: 991px){
+      display: block;
+    }
+    li{
+      position: relative;
+      @media (max-width: 991px){
+        width: 100%;
+        margin-top: 20px;
+      }
+      label{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: $blackColor;
+        font-weight: 500;
+      }
+      input{
+        width: 100%;
+        height: 60px;
+        background-color: $headerBg;
+        border: none;
+        // border: 1px solid $borderColor;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-family: "Exo 2", sans-serif;
+        font-size: 16px;
+        color: $textColor;
+      }
+      select{
+        width: 100%;
+        height: 60px;
+        background-color: $headerBg;
+        border: none;
+        // border: 1px solid $borderColor;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-family: "Exo 2", sans-serif;
+        font-size: 16px;
+        color: $textColor;
+        background-image: url(../images/down-arrow-icon2.svg);
+        background-repeat: no-repeat;
+        background-position: 94% 26px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      p.errorMessage{
+        font-size: 14px;
+        color: $errorColor;
+        margin: 0;
+      }
+    }
+  }
+}
+.smartLinerFormClmTwo{
+  ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    @media (max-width: 767px){
+      display: block;
+    }
+    li{
+      position: relative;
+      @media (max-width: 767px){
+        width: 100%;
+        margin-top: 20px;
+      }
+      label{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: $blackColor;
+        font-weight: 500;
+      }
+      input{
+        width: 100%;
+        height: 60px;
+        background-color: $headerBg;
+        // border: none;
+        border: 1px solid $borderColor;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-family: "Exo 2", sans-serif;
+        font-size: 16px;
+        color: $textColor;
+      }
+      p.errorMessage{
+        font-size: 14px;
+        color: $errorColor !important;
+        margin: 0;
+      }
+    }
+  }
+}
