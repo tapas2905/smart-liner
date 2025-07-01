@@ -162,7 +162,7 @@ const AddProduct: React.FC = () => {
     }
   };
 
-  const patchPoData = async (extractData: PurchaseOrder[]) => {
+  /*const patchPoData = async (extractData: PurchaseOrder[]) => {
     try {
       const newStatesMap = new Map<number, State[]>();
       for (let i = 0; i < extractData.length; i++) {
@@ -214,7 +214,7 @@ const AddProduct: React.FC = () => {
 
   const uploadFileClick = () => {
     fileInputRef.current?.click();
-  };
+  };*/
 
  const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
   const file = event.target.files?.[0];
