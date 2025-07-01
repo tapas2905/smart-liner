@@ -162,7 +162,7 @@ const AddProduct: React.FC = () => {
     }
   };
 
-  /*const patchPoData = async (extractData: PurchaseOrder[]) => {
+  const patchPoData = async (extractData: PurchaseOrder[]) => {
     try {
       const newStatesMap = new Map<number, State[]>();
       for (let i = 0; i < extractData.length; i++) {
@@ -210,7 +210,7 @@ const AddProduct: React.FC = () => {
     } catch (error: any) {
       alert(error?.response?.data?.detail || error?.message, "error");
     }
-  };*/
+  };
 
   const uploadFileClick = () => {
     fileInputRef.current?.click();
@@ -255,7 +255,7 @@ const AddProduct: React.FC = () => {
     formData.append("file", file);
     const res = await api.postForm(endpoints.product.extractOrder, formData);
     if (res.data?.orders) {
-      // patchPoData(res.data.orders);
+      patchPoData(res.data.orders);
     } 
   } catch (err: any) {
     const errorMessage = err.response?.data?.detail || err.message || "An unexpected error occurred.";
@@ -283,7 +283,7 @@ const AddProduct: React.FC = () => {
               style={{ display: "none" }}
             />
 
-            <button type="button" onClick={uploadFileClick} disabled={true}>
+            <button type="button" onClick={uploadFileClick} disabled={isUploadFile}>
               {!isUploadFile ? 'Browse' : (<span className={styles.uploadBtnLoader}><CircularProgress size="22px"/> Please wait...</span>)}
             </button>
 
