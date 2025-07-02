@@ -113,10 +113,11 @@ const Login: React.FC = () => {
                   <h2>Sign in</h2>
                   <p>Choose how you'd like to sign in</p>
                 </div>
-                <div>
+                <div className={styles.googleSign}>
                   <GoogleLogin
                     onSuccess={handleGoogleSuccess}
                     onError={handleGoogleFailure}
+                    auto_select={false}
                   />
                 </div>
                 <div className={styles.loginOption}>
